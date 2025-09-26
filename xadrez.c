@@ -10,7 +10,7 @@ int main(void) {
     const int TORRE_CASAS = 5;
     const int RAINHA_CASAS = 8;
 
-    int i; // variável de controle para loops
+    int i, j; // variáveis de controle para loops
 
     // ===============================
     // Movimentação do Bispo
@@ -46,6 +46,30 @@ int main(void) {
         printf("Esquerda\n");
         i++;
     } while (i <= RAINHA_CASAS);
+
+    // ===============================
+    // Nível Aventureiro - Cavalo
+    // Cavalo anda em "L" -> duas casas para baixo e uma casa para a esquerda
+    // Usando loops aninhados: for + while
+    // ===============================
+    const int CAVALO_BAIXO = 2;
+    const int CAVALO_ESQUERDA = 1;
+
+    printf("\n=== Movimentação do Cavalo (duas casas para baixo e uma para a esquerda) ===\n");
+
+    for (i = 1; i <= CAVALO_BAIXO; i++) {
+        printf("Baixo\n");
+
+        // Quando terminar as duas casas para baixo,
+        // usamos um loop while para mover para a esquerda
+        if (i == CAVALO_BAIXO) {
+            j = 1;
+            while (j <= CAVALO_ESQUERDA) {
+                printf("Esquerda\n");
+                j++;
+            }
+        }
+    }
 
     // ===============================
     // Fim do programa
